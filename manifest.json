@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Front Attachment Viewer",
+  "version": "1.4.0",
+  "description": "Enhanced attachment viewer for Front.com with zoom, search, and navigation features.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.frontapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.frontapp.com/*"],
+      "js": ["libs/pdfjs/pdf.min.js", "content-script.js"],
+      "css": ["viewer.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/pdfjs/pdf.worker.min.js"
+      ],
+      "matches": ["https://*.frontapp.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Front Attachment Viewer"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

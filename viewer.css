@@ -1,0 +1,918 @@
+/* Front Attachment Viewer Styles */
+
+.front-attachment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  backdrop-filter: blur(8px);
+}
+
+.front-attachment-overlay.hidden {
+  display: none;
+}
+
+.front-attachment-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #FCFBFE;
+  border-bottom: 1px solid #EBE9F2;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+.front-attachment-nav-left,
+.front-attachment-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.front-attachment-nav-button {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #EAE8F3;
+  color: rgb(21, 19, 27);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  transition: background-color 100ms;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  white-space: nowrap;
+  line-height: 17px;
+  padding: 6px 12px 7px;
+  user-select: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-size-adjust: 100%;
+}
+
+.front-attachment-nav-button:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.front-attachment-nav-button:active:not(:disabled) {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.front-attachment-nav-button:disabled {
+  cursor: not-allowed;
+  background: #EBE9F2 !important;
+  color: #A8AAB3 !important;
+  border-color: #EBE9F2 !important;
+}
+
+.front-search-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  min-width: 266px;
+  max-width: 320px;
+}
+
+.front-search-wrapper {
+  min-width: 266px;
+  display: flex;
+  flex-direction: row;
+}
+
+.front-search-box {
+  background: #ECEAF1;
+  border-radius: 8px;
+  box-shadow: rgb(236, 234, 241) 0px 0px 6px 3px, rgb(141, 145, 155) 0px 0px 0px 1px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 0px;
+  max-width: 100%;
+  min-width: 266px;
+}
+
+.front-search-box:focus-within {
+  background: white !important;
+  box-shadow: rgb(98, 87, 244) 0px 0px 0px 1px, rgb(98, 87, 244) 0px 0px 0px 1px inset !important;
+}
+
+.front-search-input {
+  font-family: inherit;
+  text-rendering: auto !important;
+  display: block;
+  color: inherit;
+  background: transparent;
+  outline: 0px;
+  border: 0px;
+  padding: 0px;
+  appearance: none;
+  user-select: text;
+  cursor: text;
+  flex: 1 1 0%;
+  width: 0px;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 5px 8px;
+  color: rgb(21, 19, 27);
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: 100%;
+  min-width: 100px;
+}
+
+.front-search-input::placeholder {
+  color: rgb(101, 105, 114);
+}
+
+.front-search-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.front-search-accessories {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin: 4px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 2px;
+  gap: 1px;
+}
+
+.front-search-counter {
+  color: rgb(80, 76, 87);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  padding: 4px 8px;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.front-search-controls-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1px;
+  align-items: center;
+  justify-items: center; 
+}
+
+.front-search-control-button {
+  background: #D9D6DB;
+  border: none;
+  color: rgb(101, 105, 114);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  user-select: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.front-search-control-button:hover:not(:disabled) {
+  background: rgba(188, 188, 188, 1);
+  color: rgb(21, 19, 27);
+}
+
+.front-search-control-button:active:not(:disabled) {
+  background: rgb(226, 224, 231);
+}
+
+.front-search-control-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.front-search-control-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  display: block;
+  margin: auto;
+}
+
+.front-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 13px 0px;
+  border-radius: 8px;
+  width: 99px;
+  height: 30px;
+  justify-content: space-between;
+}
+
+.front-zoom-controls .front-attachment-nav-button {
+  padding: 4px !important;
+  background: transparent !important;
+  border: none !important;
+  width: 26px !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  border-radius: 8px !important;
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+  transition: background-color 100ms !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  flex: none !important;
+  overflow: visible !important;
+}
+
+.front-zoom-controls .front-attachment-nav-button:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.front-zoom-level {
+  color: rgb(21, 19, 27);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+  user-select: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front-attachment-nav-button.success {
+  background: rgb(98, 87, 244) !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500 !important;
+  transition: background-color 100ms !important;
+  padding: 6px 12px 7px !important;
+  flex: none !important;
+  width: auto !important;
+}
+
+.front-attachment-nav-button.success:hover:not(:disabled) {
+  background: rgb(88, 77, 234) !important;
+}
+
+.front-attachment-nav-button.primary {
+  background: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+  color: rgb(21, 19, 27) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 8px !important;
+  flex: none !important;
+}
+
+.front-attachment-nav-button.primary:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.front-attachment-nav-button.danger {
+  background: rgb(220, 53, 69) !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500 !important;
+  transition: background-color 100ms !important;
+}
+
+.front-attachment-nav-button.danger:hover:not(:disabled) {
+  background: rgb(200, 35, 51) !important;
+}
+
+.front-attachment-title {
+  color: rgb(21, 19, 27);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  margin: 0 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: none;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+}
+
+.front-attachment-close {
+  background: transparent;
+  border: none;
+  color: rgb(80, 76, 87);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 100ms;
+  padding: 5px;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: all;
+}
+
+.front-attachment-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.front-attachment-close svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.front-attachment-viewer {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  min-height: 0;
+  transform: translateZ(0);
+  will-change: contents;
+}
+
+.front-side-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10001;
+  opacity: 0.8;
+  transition: all 0.15s ease;
+  backdrop-filter: blur(8px);
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.front-side-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #dee2e6;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05) translateZ(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.front-side-arrow.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.front-attachment-overlay:hover .front-side-arrow:not(.disabled) {
+  opacity: 0.9;
+}
+
+.front-side-arrow-left {
+  left: 26px;
+}
+
+.front-side-arrow-right {
+  right: 26px;
+}
+
+.front-side-arrow-icon {
+  font-size: 16px;
+  color: #495057;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.front-attachment-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+.front-attachment-content.transitioning {
+  pointer-events: none;
+}
+
+.front-attachment-content.fade-out {
+  animation: fadeOut 60ms ease-out forwards;
+}
+
+.front-attachment-content.fade-in {
+  animation: fadeIn 60ms ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.front-attachment-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.15;
+  animation: fadeIn 60ms ease-in;
+}
+
+.front-attachment-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.front-attachment-info {
+  padding: 10px 20px;
+  background: #FCFBFE;
+  border-top: 1px solid #EBE9F2;
+  flex-shrink: 0;
+}
+
+.front-attachment-filename {
+  color: rgb(21, 19, 27);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+}
+
+.front-attachment-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 360px;
+  margin: 0 auto;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.front-attachment-error-icon {
+  font-size: 40px;
+  opacity: 0.7;
+}
+
+#front-pdf-container,
+#front-image-container {
+  background: transparent;
+  transform-origin: center top;
+  transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  min-height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+#front-pdf-container > div,
+#front-image-container > img {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+.front-attachment-counter {
+  color: rgb(21, 19, 27);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: InterVariable, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  line-height: 1.15;
+}
+
+.textLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  color: transparent;
+  user-select: text;
+  overflow: hidden;
+}
+
+.textLayer span {
+  position: absolute;
+  white-space: pre;
+  transform-origin: 0% 0%;
+  color: transparent !important;
+  cursor: text;
+  user-select: text;
+  line-height: 1;
+}
+
+.textLayer ::selection {
+  background: rgba(0, 123, 255, 0.2);
+}
+
+.search-highlight {
+  position: absolute;
+  background: rgba(255, 193, 7, 0.4);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 10;
+  transition: background 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-sizing: border-box;
+  overflow: hidden;
+  will-change: background;
+  contain: layout style paint;
+  border: 1px solid rgba(255, 193, 7, 0.6);
+  transform: translateZ(0);
+}
+
+.search-highlight.current {
+  background: rgba(255, 152, 0, 0.6) !important;
+  border: 1px solid #ff9800;
+  box-shadow: 0 0 0 1px rgba(255, 152, 0, 0.3);
+}
+
+.search-highlight-fallback {
+  border: 1px dashed #ff9800 !important;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .front-attachment-nav {
+    background: #15131B;
+    border-bottom: 1px solid #2A2831;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .front-attachment-nav-button {
+    border: 1px solid #2A2831;
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-nav-button:hover:not(:disabled) {
+    background: rgba(245, 242, 248, 0.05);
+  }
+  
+  .front-attachment-nav-button:active:not(:disabled) {
+    background: rgba(245, 242, 248, 0.08);
+  }
+  
+  .front-attachment-nav-button:disabled {
+    background: #2A2831 !important;
+    color: #656569 !important;
+    border-color: #2A2831 !important;
+  }
+  
+  .front-search-box {
+    background: #2A2831;
+    box-shadow: rgb(42, 40, 49) 0px 0px 6px 3px, rgb(80, 76, 87) 0px 0px 0px 1px;
+  }
+  
+  .front-search-box:focus-within {
+    background: #1E1C24 !important;
+    box-shadow: rgb(98, 87, 244) 0px 0px 0px 1px, rgb(98, 87, 244) 0px 0px 0px 1px inset !important;
+  }
+  
+  .front-search-input {
+    color: #F5F2F8;
+  }
+  
+  .front-search-input::placeholder {
+    color: #A19BAC;
+  }
+  
+  .front-search-counter {
+    color: #A19BAC;
+  }
+  
+  .front-search-control-button {
+    background: #504C57;
+    color: #A19BAC;
+  }
+  
+  .front-search-control-button:hover:not(:disabled) {
+    background: #656569;
+    color: #F5F2F8;
+  }
+  
+  .front-search-control-button:active:not(:disabled) {
+    background: #3E3A47;
+  }
+  
+  .front-zoom-controls {
+    background: #2A2831;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 13px 0px;
+  }
+  
+  .front-zoom-controls .front-attachment-nav-button:hover:not(:disabled) {
+    background: rgba(245, 242, 248, 0.05) !important;
+  }
+  
+  .front-zoom-level {
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-nav-button.primary {
+    color: #F5F2F8 !important;
+  }
+  
+  .front-attachment-nav-button.primary:hover:not(:disabled) {
+    background: rgba(245, 242, 248, 0.05) !important;
+  }
+  
+  .front-attachment-title {
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-close {
+    color: #A19BAC;
+  }
+  
+  .front-attachment-close:hover {
+    background: rgba(245, 242, 248, 0.05);
+    color: #F5F2F8;
+  }
+  
+.front-side-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%) translateZ(0);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10001;
+  opacity: 0.8;
+  transition: all 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  will-change: transform, opacity;
+}
+  
+  .front-attachment-loading {
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-spinner {
+    border: 2px solid rgba(245, 242, 248, 0.3);
+    border-top: 2px solid #6257f4;
+  }
+  
+  .front-attachment-info {
+    background: #15131B;
+    border-top: 1px solid #2A2831;
+  }
+  
+  .front-attachment-filename {
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-error {
+    color: #F5F2F8;
+  }
+  
+  .front-attachment-counter {
+    color: #F5F2F8;
+  }
+  
+  .textLayer ::selection {
+    background: rgba(98, 87, 244, 0.3);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .front-side-arrow {
+    width: 40px;
+    height: 40px;
+    opacity: 0.9;
+  }
+  
+  .front-side-arrow-left {
+    left: 16px;
+  }
+  
+  .front-side-arrow-right {
+    right: 16px;
+  }
+  
+  .front-side-arrow-icon {
+    font-size: 14px;
+  }
+  
+  .front-attachment-nav {
+    padding: 10px 16px;
+    gap: 6px;
+  }
+  
+  .front-attachment-nav-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    min-height: 28px;
+  }
+  
+  .front-search-input-wrapper {
+    width: 240px;
+  }
+  
+  .front-search-input-box {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .front-side-arrow {
+    width: 36px;
+    height: 36px;
+    opacity: 1;
+  }
+  
+  .front-side-arrow-left {
+    left: 12px;
+  }
+  
+  .front-side-arrow-right {
+    right: 12px;
+  }
+  
+  .front-side-arrow-icon {
+    font-size: 12px;
+  }
+  
+  .front-attachment-nav {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+  }
+  
+  .front-attachment-nav-left,
+  .front-attachment-nav-right {
+    gap: 4px;
+  }
+  
+  .front-search-input-wrapper {
+    width: 200px;
+  }
+  
+  .front-search-input-box {
+    padding: 5px 8px;
+  }
+  
+  .front-attachment-error {
+    padding: 24px 16px;
+  }
+}
+
+/* Focus Styles */
+.front-attachment-nav-button:focus,
+.front-search-input:focus,
+.front-attachment-close:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .front-attachment-nav {
+    border-bottom-color: #000000;
+  }
+  
+  .front-attachment-nav-button {
+    border-color: #000000;
+  }
+  
+  .front-search-input {
+    border-color: #000000;
+  }
+}
+
+@media (prefers-contrast: high) and (prefers-color-scheme: dark) {
+  .front-attachment-nav {
+    border-bottom-color: #504C57;
+  }
+  
+  .front-attachment-nav-button {
+    border-color: #504C57;
+  }
+  
+  .front-search-input {
+    border-color: #504C57;
+  }
+}
